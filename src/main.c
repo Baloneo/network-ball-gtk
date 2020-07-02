@@ -58,13 +58,20 @@ static void tran_setup(GtkWidget *win) {
 gboolean on_move_event(GtkWidget *window,
                        GdkEvent *event,
                        gpointer user_data) {
-  //  g_print("on_move_event event->button %d; event-type %d\n", event->button, event->type);
-  //  printf("%d\n", ((GdkEventMotion*)event)->state);
-  //  printf("%d\n", GDK_BUTTON1_MASK);
+//    g_print("on_move_event event->button %d; event-type %d\n", event->button, event->type);
+//    printf("++++%d\n", ((GdkEventMotion*)event)->state);
+//    printf("---%d\n", GDK_BUTTON1_MASK);
+    if (((GdkEventMotion*)event)->state == 272) {  // fixed manjaro cannot move
+        gtk_window_move(GTK_WINDOW(window), event->button.x_root - (SIZE / 2), event->button.y_root - (SIZE / 2));
+        return TRUE;
+    }
+
     if (((GdkEventMotion*)event)->state == GDK_BUTTON1_MASK) {
         gtk_window_move(GTK_WINDOW(window), event->button.x_root - (SIZE / 2), event->button.y_root - (SIZE / 2));
         return TRUE;
     }
+
+
     return TRUE;
 
 }
