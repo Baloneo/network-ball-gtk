@@ -10,7 +10,7 @@ Display network speed and memory information on linux desktop platform.
 git clone https://github.com/Baloneo/network-ball-gtk.git
 cd network-ball-gtk/releases
 ```
-2. chmox +x
+2. chmod +x
 ```
 chmod +x network-ball-gtk
 ```
