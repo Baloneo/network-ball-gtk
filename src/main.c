@@ -157,6 +157,11 @@ static gboolean on_draw_event(GtkWidget *widget, cairo_t *cr,
         cairo_set_source_rgb(first_cr, 0.9, 0, 0); // red
     }
 
+    // warn the user if memory too hight
+    if (memPercentage >= 95) {
+        system("notify-send -i dialog-warning -t 10 \"Memory is too high\" \"$(ps -eo pid,ppid,%mem,%cpu,comm --sort=-%mem | head -6 | tail -5)\"");
+    }
+
     if (rand_color1 != 0 || rand_color2 != 0 || rand_color3 != 0)  {
         cairo_set_source_rgb(first_cr, rand_color1, rand_color2, rand_color3);
     }
