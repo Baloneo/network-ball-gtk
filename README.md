@@ -5,16 +5,16 @@ Display network speed and memory information on linux desktop platform.
 ![net-ball-gtk](https://raw.githubusercontent.com/Baloneo/network-ball-gtk/master/net-ball-gtk5.gif)
 
 ## Run
-1. Clone or download this project.
+1. Git clone or download this project.
 ```
 git clone https://github.com/Baloneo/network-ball-gtk.git
 cd network-ball-gtk/releases
 ```
-2. change file mode bits
+2. chmox +x
 ```
 chmod +x network-ball-gtk
 ```
-3. run it
+3. run
 ```
 ./network-ball-gtk
 ```
